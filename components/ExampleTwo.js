@@ -59,3 +59,8 @@ export default function ExampleTwo() {
     </div>
   );
 }
+
+// extract ids to retrieve lap times
+//const subsessionIds = sessions.map((session: { subsession_id: number }) => session.subsession_id);
+
+//console.log(subsessionIds);
