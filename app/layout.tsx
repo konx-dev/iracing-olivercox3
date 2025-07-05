@@ -25,15 +25,29 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  await checkFileAge('cookies.json');
-  console.log('Authentication verified, requesting data...');
+  let apiAvailability = false;
+  let data = null;
 
-  const data = await searchSeries(2025, 2);
+  try {
+    // Check authentication status
+    await checkFileAge('cookies.json');
+    console.log('Authentication verified, requesting data...');
+
+    // Attempt to fetch data to verify API availability
+    data = await searchSeries(2025, 2);
+    apiAvailability = true;
+    console.log('API is available and responding');
+  } catch (error) {
+    console.error('API unavailable or authentication failed:', error);
+    apiAvailability = false;
+    // You might want to set some default/fallback data here
+    data = [];
+  }
 
   return (
     <html lang="en">
       <body className={`${geistSans.variable} antialiased`}>
-        <Header apiAvailability={true} />
+        <Header apiAvailability={apiAvailability} />
         <main>
           <DataProvider initialData={data}>{children}</DataProvider>
         </main>
