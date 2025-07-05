@@ -10,10 +10,10 @@ export async function checkFileAge(file) {
 
     // Calculate file age in milliseconds
     const fileAgeMs = currentTime - birthTime;
-    const sixHoursMs = 6 * 60 * 60 * 1000; // Convert 6 hours to milliseconds
+    const oneHourMs = 1 * 60 * 60 * 1000; // Convert 6 hours to milliseconds
 
-    if (fileAgeMs > sixHoursMs) {
-      console.log('File is older than 6 hours, taking action.');
+    if (fileAgeMs > oneHourMs) {
+      console.log('File is older than 1 hour, taking action.');
       // delete file
       fs.unlinkSync(file);
 

@@ -2,7 +2,7 @@
 import ApiStatusBadge from '@/components/atom/ApiStatusBadge';
 
 export default function Header({ apiAvailability = false }: { apiAvailability: boolean }) {
-  console.log(apiAvailability);
+  //console.log(apiAvailability);
 
   return (
     <header>

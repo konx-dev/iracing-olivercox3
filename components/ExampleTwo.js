@@ -27,9 +27,9 @@ export default function ExampleTwo() {
     { groups: {}, carIds: [], raceCategories: [] }
   );
 
-  console.log(groupedCars.groups); // Grouped cars by car_id
-  console.log(groupedCars.carIds); // Unique car_id list
-  console.log(groupedCars.raceCategories); // Unique car_id list
+  //console.log(groupedCars.groups); // Grouped cars by car_id
+  //console.log(groupedCars.carIds); // Unique car_id list
+  //console.log(groupedCars.raceCategories); // Unique car_id list
 
   return (
     <div className="flex flex-col gap-16">
